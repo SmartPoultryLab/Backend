@@ -1,0 +1,2 @@
+class FarmTreatment < ApplicationRecord
+end

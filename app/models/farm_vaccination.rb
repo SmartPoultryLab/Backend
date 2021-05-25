@@ -1,0 +1,2 @@
+class FarmVaccination < ApplicationRecord
+end
