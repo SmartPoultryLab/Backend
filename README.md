@@ -19,7 +19,7 @@ Smart Poultry Laboratory uses a number of open source projects to work properly:
 - [x] Implement JWT Authentication      (due 12/05/2021)
 - [x] Owners api CRUD endpoints         (due 13/05/2021) 
 - [x] Farms api CRUD endpoints          (due 13/05/2021)
-- [ ] Inspections api CRUD endpoints     (due 30/05/2021)
+- [ ] Inspections api CRUD endpoints    (due 30/05/2021)
 - [ ] Collect Dataset                   (due 30/05/2021)
 - [ ] Apply Image processing on Dataset (due 30/05/2021)
 - [ ] Code the machine learning module 
@@ -41,10 +41,10 @@ Smart Poultry Laboratory uses a number of open source projects to work properly:
 
 Before getting started you should have the following installed and running:
 
-- [x] Ruby - [instructions](https://nodejs.org/en/download/)
-- [X] Rails - [instructions](https://yarnpkg.com/en/docs/install)
-- [X] MySQL - [instructions](https://cli.vuejs.org/guide/installation.html)
-- [X] Bundler - [instructions](https://docs.nestjs.com/)
+- [x] Ruby - [instructions](https://rubyinstaller.org/downloads/)
+- [X] Rails - [instructions](https://guides.rubyonrails.org/getting_started.html)
+- [X] MySQL - [instructions](https://www.mysql.com/)
+- [X] Bundler - [instructions](https://bundler.io/)
   
 ## Setup Project
 Clone Repo
