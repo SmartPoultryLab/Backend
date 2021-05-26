@@ -1,12 +1,13 @@
-# Smart Poultry Laboratory
+# Smart Poultry Laboratory Backend
 
 ## Used Technologies
 Smart Poultry Laboratory uses a number of open source projects to work properly:
 
-- [NodeJS](https://nodejs.org) -  JavaScript runtime built on Chrome's V8 JavaScript engine.
+- [Ruby](https://www.ruby-lang.org/en/) - A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.
+- [Ruby On Rails](https://rubyonrails.org/) - server-side web application framework written in Ruby under the MIT License. Rails is a model–view–controller framework, providing default structures for a database, a web service, and web pages
 - [MySQL](https://www.mysql.com/) - fully managed database service to deploy cloud-native applications
-- [Vue](https://vuejs.org/) - Progressive JavaScript Framework for building reactive single page applications
-- [NestJS](https://nestjs.com/) - A progressive Node.js framework for building efficient, reliable and scalable server-side applications.
+
+
 
 ## _Backend-Group Tasks_
 
@@ -28,22 +29,6 @@ Smart Poultry Laboratory uses a number of open source projects to work properly:
 - [ ] Owners api CRUD endpoints     (due 13/05/2021)
 - [ ] Farms api CRUD endpoints      (due 15/05/2021)
 
-## _Frontend-Group Tasks_
-
-### Tasks list (Ali Gamal)
-
-- [x] Design Owners Page         (due 13/05/2021)
-- [x] Design Farms Page          (due 15/05/2021)
-- [ ] Design PostMortem Page     (due 30/05/2021)
-  
-### Tasks list (Lo'ay Mokhtar)
-
-
-- [ ]  Design Profile Page        (due 13/05/2021)
-- [ ]  Design Settings Page       (due 15/05/2021)
-- [ ]  Design PostMortem Page     (due 30/05/2021)
-
-
 ## _Database-Group Tasks_
 
 ### Tasks list (Ahmed Saify)
@@ -52,62 +37,30 @@ Smart Poultry Laboratory uses a number of open source projects to work properly:
 - [x] Create first database model (due 07/05/2021)
 
 
-## Installation
-
-### Includes
-* Nest CLI
-* Vue CLI 3
-* Vue Router
-* Vuex
-
-## Directory Structure
-
-- `root`: Project root holds all the fies of the project
-    - `apps`: Holds client(VueJS) and server(NestJS) projects (You can add any client or server frameworks in here in addition or replace with existing ones. See section `Add other frameworks` in `How To`)
-        - `vue`: A Vue project created using vue-cli
-        - `nest`: A Nest project created using nest-cli
-    - `libs`: Holds all the common codes you can share between projects
-        - `shared`: A shared module for common code sharing across projects in this work space.
-
-
 ## Prerequisites
 
 Before getting started you should have the following installed and running:
 
-- [x] Node.js - [instructions](https://nodejs.org/en/download/)
-- [X] Yarn - [instructions](https://yarnpkg.com/en/docs/install)
-- [X] Vue CLI 3 - [instructions](https://cli.vuejs.org/guide/installation.html)
-- [X] NestJs- [instructions](https://docs.nestjs.com/)
+- [x] Ruby - [instructions](https://nodejs.org/en/download/)
+- [X] Rails - [instructions](https://yarnpkg.com/en/docs/install)
+- [X] MySQL - [instructions](https://cli.vuejs.org/guide/installation.html)
+- [X] Bundler - [instructions](https://docs.nestjs.com/)
   
 ## Setup Project
 Clone Repo
 ```
-$ git clone https://github.com/SmartPoultryLab/SmartPoultryLab.git
+$ git clone https://github.com/SmartPoultryLab/Backend.git
 $ cd SmartPoultryLab
 ```
 
 Setup
 ```
-$ yarn install
+$ bundle install
+$ rails db:create
+$ rails db:migrate
 ```
 
-## Scripts
-
-* `yarn dev:all:start` - Starts Development server for shared, vue and nest,
-* `yarn dev:all:build` - Builds shared, vue and nest,
-* `yarn dev:vue:start` - Starts vue development nest,
-* `yarn dev:vue:build` - Builds vue,
-* `yarn dev:vue:lint` - Lints vue,
-* `yarn test:vue:unit` - Unit testing for vue,
-* `yarn test:vue:e2e` - End to End testing for vue,
-* `yarn dev:nest:start` - Starts nest development server,
-* `yarn dev:nest:build` - Builds nest,
-* `yarn dev:nest:lint` - Lints nest,
-* `yarn prod:nest:start` - Starts nest in production mode,
-* `yarn dev:shared:start` - Starts shared development nest,
-* `yarn dev:shared:build` - Builds shared,
-* `yarn dev-shared:vue:start` - Starts shared and vue in development mode,
-* `yarn dev-shared:nest:start` - Starts shared and nest in development mode,
-* `yarn dev-shared:vue:build` - Builds shared and vue,
-* `yarn dev-shared:nest:build` - Builds shared and nest,
-* `yarn utils:remove-node-modules` - Removes all node_modules folders
+Starting Dev Server
+```
+$ rails s
+```
