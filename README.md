@@ -12,30 +12,36 @@ Smart Poultry Laboratory uses a number of open source projects to work properly:
 
 ### Tasks list (Mohamed Shawky)
 
-- [x] Create project and folders structure
-- [ ] Setup Database migrations         (due 07/05/2021)
-- [ ] Users api CRUD endpoints          (due 07/05/2021)
-- [ ] Implement JWT Authentication      (due 07/05/2021)
-- [ ] PostMortem api CRUD endpoints     (due 09/05/2021)
-
+- [x] Create project and folders structure  (due 09/05/2021)
+- [x] Setup Database migrations         (due 12/05/2021)
+- [x] Users api CRUD endpoints          (due 12/05/2021)
+- [x] Implement JWT Authentication      (due 12/05/2021)
+- [x] Owners api CRUD endpoints         (due 13/05/2021) 
+- [x] Farms api CRUD endpoints          (due 13/05/2021)
+- [ ] Inspections api CRUD endpoints     (due 30/05/2021)
+- [ ] Collect Dataset                   (due 30/05/2021)
+- [ ] Apply Image processing on Dataset (due 30/05/2021)
+- [ ] Code the machine learning module 
+-
 ### Tasks list (Omar Baz)
 
-- [ ] Owners api CRUD endpoints     (due 08/05/2021)
-- [ ] Farms api CRUD endpoints      (due 08/05/2021)
+- [ ] Owners api CRUD endpoints     (due 13/05/2021)
+- [ ] Farms api CRUD endpoints      (due 15/05/2021)
 
 ## _Frontend-Group Tasks_
 
 ### Tasks list (Ali Gamal)
 
-- [ ] Design Owners Page         (due 07/05/2021)
-- [ ] Design Farms Page          (due 08/05/2021)
-- [ ] Design PostMortem Page     (due 09/05/2021)
+- [x] Design Owners Page         (due 13/05/2021)
+- [x] Design Farms Page          (due 15/05/2021)
+- [ ] Design PostMortem Page     (due 30/05/2021)
   
 ### Tasks list (Lo'ay Mokhtar)
 
-- [ ]  Design PostMortem Page     (due 09/05/2021)
-- [ ]  Design Profile Page        (due 08/05/2021)
-- [ ]  Design Settings Page       (due 09/05/2021)
+
+- [ ]  Design Profile Page        (due 13/05/2021)
+- [ ]  Design Settings Page       (due 15/05/2021)
+- [ ]  Design PostMortem Page     (due 30/05/2021)
 
 
 ## _Database-Group Tasks_
@@ -43,7 +49,7 @@ Smart Poultry Laboratory uses a number of open source projects to work properly:
 ### Tasks list (Ahmed Saify)
 
 - [ ] Draw the base ERD (due 07/05/2021)
-- [ ] Create first database model (due 07/05/2021)
+- [x] Create first database model (due 07/05/2021)
 
 
 ## Installation
