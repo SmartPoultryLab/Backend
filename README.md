@@ -50,7 +50,7 @@ Before getting started you should have the following installed and running:
 Clone Repo
 ```
 $ git clone https://github.com/SmartPoultryLab/Backend.git
-$ cd SmartPoultryLab
+$ cd Backend
 ```
 
 Setup
