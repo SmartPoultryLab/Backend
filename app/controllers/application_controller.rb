@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::API
+ class ApplicationController < ActionController::API
     before_action :authorized
 
   def encode_token(payload)
@@ -8,7 +8,6 @@ class ApplicationController < ActionController::API
   def auth_header
     request.headers['Authorization']
   end
-
   def decoded_token
     if auth_header
       token = auth_header.split(' ')[1]
@@ -26,6 +25,7 @@ class ApplicationController < ActionController::API
       @user = User.find_by(id: user_id)
     end
   end
+
 
   def logged_in?
     !!logged_in_user

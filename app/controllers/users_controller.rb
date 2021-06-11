@@ -30,19 +30,18 @@ class UsersController < ApplicationController
 
   # SUMMARY ROUTE
   def summary
-    tOwners = SummaryObj.new("totalOwners","account_circle","Total Owners",Owner.where(user_id: @user.id).count)
-    tFarms = SummaryObj.new("totalFarms","view_module","Total Farms", Farm.where(user_id: @user.id).count)
-    tInspections = SummaryObj.new("totalInspections","biotech","Total Inspections",Inspection.where(user_id: @user.id).count)
-    tScans = SummaryObj.new("totalScans","search","Total Scans",Inspection.where(user_id: @user.id).count)
-    summaryArr = [tOwners,tFarms,tInspections,tScans]
-    render json: summaryArr, status:200
+    t_owners = SummaryObj.new("totalOwners","account_circle","Total Owners",Owner.where(user_id: @user.id).length)
+    t_farms = SummaryObj.new("totalFarms","view_module","Total Farms", Farm.where(user_id: @user.id).length)
+    t_inspections = SummaryObj.new("totalInspections","biotech","Total Inspections",Inspection.where(user_id: @user.id).length)
+    t_scans = SummaryObj.new("totalScans","search","Total Scans",Inspection.where(user_id: @user.id).length)
+    summary_arr = [t_owners,t_farms,t_inspections,t_scans]
+    render json: summary_arr, status:200
   end
-
 
   # Refactoring User Object to remove password field
   private
   def user_json
-    return { id:@user.id,fullName:@user.fullName,email:@user.email,avatarUrl:@user.avatarUrl }
+    { id:@user.id,fullName:@user.fullName,email:@user.email,avatarUrl:@user.avatarUrl }
   end
 
   # Announcing Controller Parameters
