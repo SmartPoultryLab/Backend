@@ -28,6 +28,10 @@ class UsersController < ApplicationController
   end
   end
 
+  def farm_options
+    render json: {foods: Food.all,birds:Bird.all,breeds:Breed.all,housings:Housing.all },status:200
+  end
+
   # SUMMARY ROUTE
   def summary
     t_owners = SummaryObj.new("totalOwners","account_circle","Total Owners",Owner.where(user_id: @user.id).length)

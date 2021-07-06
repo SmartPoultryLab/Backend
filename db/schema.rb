@@ -106,11 +106,11 @@ ActiveRecord::Schema.define(version: 2021_05_25_010731) do
     t.bigint "user_id", null: false
     t.bigint "farm_id", null: false
     t.datetime "inspection_date"
-    t.decimal "current_age", precision: 10
+    t.text "current_age"
     t.decimal "dead_last_3_days", precision: 10
-    t.decimal "feed_consumption", precision: 10
-    t.decimal "water_consumption", precision: 10
-    t.decimal "average_weight", precision: 10
+    t.text "feed_consumption"
+    t.text "water_consumption"
+    t.text "average_weight"
     t.text "other_notes"
     t.text "clinical_signs"
     t.text "pm_lesions"

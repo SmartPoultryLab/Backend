@@ -1,8 +1,8 @@
 class OwnersController < ApplicationController
-    before_action :set_owner, only:[:get_owner_by_id,:update_owner,:delete_owner]
+    before_action :set_owner, only:[:get_owner_by_id,:update_owner,:delete_owner,:get_owner_farms]
 
     def get_owners
-        render json: Owner.all ,status:200
+        render json: Owner.select('*').where(user_id: logged_in_user['id']) , status:200
     end
 
     def get_owner_by_id
@@ -35,6 +35,10 @@ class OwnersController < ApplicationController
         render json:{msg: "Owner Deleted" },status:200
     end
 
+    def get_owner_farms
+        owner_farms = Farm.select('*').where(owner_id:@current_owner.id)
+        render json:owner_farms,status:200
+    end
     # Announcing Controller Parameters
     private
     def owner_params
