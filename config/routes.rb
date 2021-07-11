@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   #resource :users, only: [:create]
   post "/login", to: "users#login"
   post "/register" ,to: "users#register"
+  post "/users", to:"users#update"
+  get "/me",to:"users#get_me"
+  post "/changepwd",to:"users#change_password"
   get "/summary", to: "users#summary"
   get "/options", to:"users#farm_options"
 

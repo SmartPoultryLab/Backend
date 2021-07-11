@@ -1,12 +1,19 @@
 class Inspection < ApplicationRecord
   require 'json'
+
   def self.get_all(user_id)
-    sql = "SELECT inspections.* ,farms.farm_name from inspections"\
+    sql = "SELECT inspections.* ,farms.farm_name ,owners.name as owner_name from inspections"\
           " INNER JOIN farms ON farms.id = inspections.farm_id"\
+          " INNER JOIN owners ON owners.id = farms.owner_id"\
           " WHERE inspections.user_id = #{user_id};"
     inspections_array = ActiveRecord::Base.connection.exec_query(sql)
 
     inspections_array.each do |inspection|
+
+      inspection['clinical_signs'] = ActiveSupport::JSON.decode inspection['clinical_signs']
+      inspection['pm_lesions'] = ActiveSupport::JSON.decode inspection['pm_lesions']
+      inspection['diagnoses'] = ActiveSupport::JSON.decode inspection['diagnoses']
+
       inspection['current_age'] = ActiveSupport::JSON.decode inspection['current_age']
       inspection['feed_consumption'] = ActiveSupport::JSON.decode inspection['feed_consumption']
       inspection['water_consumption'] = ActiveSupport::JSON.decode inspection['water_consumption']
@@ -14,6 +21,8 @@ class Inspection < ApplicationRecord
     end
     inspections_array
   end
+
+
 
   def self.get_by_id(id)
     inspection = Inspection.find(id)
@@ -28,9 +37,9 @@ class Inspection < ApplicationRecord
     new_inspection['water_consumption'] =  ActiveSupport::JSON.decode inspection.water_consumption
     new_inspection['average_weight'] =  ActiveSupport::JSON.decode inspection.average_weight
     new_inspection['other_notes'] = inspection.other_notes
-    new_inspection['clinical_signs'] = inspection.clinical_signs
-    new_inspection['pm_lesions'] = inspection.pm_lesions
-    new_inspection['diagnoses'] = inspection.diagnoses
+    new_inspection['clinical_signs'] =  ActiveSupport::JSON.decode inspection.clinical_signs
+    new_inspection['pm_lesions'] =  ActiveSupport::JSON.decode inspection.pm_lesions
+    new_inspection['diagnoses'] =  ActiveSupport::JSON.decode inspection.diagnoses
     new_inspection
   end
 
@@ -44,9 +53,9 @@ class Inspection < ApplicationRecord
     inspection['water_consumption'] = params[:water_consumption].to_json
     inspection['average_weight'] =  params[:average_weight].to_json
     inspection['other_notes'] = params[:other_notes]
-    inspection['clinical_signs'] =params[:clinical_signs]
-    inspection['pm_lesions'] = params[:pm_lesions]
-    inspection['diagnoses'] = params[:diagnoses]
+    inspection['clinical_signs'] =params[:clinical_signs].to_json
+    inspection['pm_lesions'] = params[:pm_lesions].to_json
+    inspection['diagnoses'] = params[:diagnoses].to_json
     old_insp.update(inspection)
     old_insp
   end
@@ -61,9 +70,9 @@ class Inspection < ApplicationRecord
     inspection.water_consumption = params[:water_consumption].to_json
     inspection.average_weight = params[:average_weight].to_json
     inspection.other_notes = params[:other_notes]
-    inspection.clinical_signs = params[:clinical_signs]
-    inspection.pm_lesions = params[:pm_lesions]
-    inspection.diagnoses = params[:diagnoses]
+    inspection.clinical_signs = params[:clinical_signs].to_json
+    inspection.pm_lesions = params[:pm_lesions].to_json
+    inspection.diagnoses = params[:diagnoses].to_json
     inspection
   end
 end
